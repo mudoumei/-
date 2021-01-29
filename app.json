@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/add/add",
+    "pages/logs/logs",
+    "pages/calendar/calendar"
+  ],
+  "window": {
+    "navigationStyle" : "custom",
+    "enablePullDownRefresh" : false
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#1a1a1a",
+    "selectedColor": "#9996ee",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首 页",
+      "iconPath": "asset/image/homeIcon.png",
+      "selectedIconPath": "asset/image/homeIcon2.png"
+    },
+    {
+      "pagePath": "pages/logs/logs",
+      "text": "",
+      "iconPath": "",
+      "selectedIconPath": ""
+    },
+    {
+      "pagePath": "pages/calendar/calendar",
+      "text": "推 荐",
+      "iconPath": "asset/image/recommendIcon.png",
+      "selectedIconPath": "asset/image/recommendIcon2.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

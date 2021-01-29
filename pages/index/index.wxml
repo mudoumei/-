@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view>
+  <headerNav title="首页"/>
+  <view style="width:100%;height:1330rpx;" class="bg"></view>
+  <tabBar/>
+</view>
+

@@ -1,0 +1,6 @@
+<!--components/headerNav/headerNav.wxml-->
+<view style="height:{{titleHeight}}rpx;padding-top:{{statuHeight}}rpx;background: linear-gradient(#EEDEFB, #BFD8F9); ">
+<view style="height:{{titleHeight}}rpx;line-height:{{titleHeight}}rpx;text-align:center">
+  <text style="color:#fff; font-size={{fontSize}}">{{title}}</text>
+</view>
+</view>
