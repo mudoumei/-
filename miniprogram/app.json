@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/calendar/calendar",
+    "pages/recommend/recommend",
+    "pages/bill/bill"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#1a1a1a",
+    "selectedColor": "#9996ee",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首 页",
+        "iconPath": "asset/image/homeIcon.png",
+        "selectedIconPath": "asset/image/homeIcon2.png"
+      },
+      {
+        "pagePath": "pages/recommend/recommend",
+        "text": "推 荐",
+        "iconPath": "asset/image/recommendIcon.png",
+        "selectedIconPath": "asset/image/recommendIcon2.png"
+      },
+      {
+        "pagePath": "pages/recommend/recommend",
+        "text": "推 荐",
+        "iconPath": "asset/image/recommendIcon.png",
+        "selectedIconPath": "asset/image/recommendIcon2.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "cloud": true,
+  "sitemapLocation": "sitemap.json"
+}

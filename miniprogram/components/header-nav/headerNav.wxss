@@ -1,0 +1,7 @@
+/* components/headerNav/headerNav.wxss */
+.nav-container{
+  background: linear-gradient(#EEDEFB,#BFD8F9);
+  position: fixed;
+  top:0;
+  width: 100%;
+}

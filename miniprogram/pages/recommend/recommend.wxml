@@ -1,0 +1,16 @@
+<!--pages/recommend/recommend.wxml-->
+<view>
+  <headerNav title="推荐"/>
+  <tabBar active="{{2}}"/> 
+  <view class="tabs"  >
+    <text wx:for="{{tabs}}" wx:key="index" data-index="{{index}}" bindtap="changeIndex">{{item}}</text>
+    <view class="tabBar" style="left:{{tabBarLeft}}%"></view>
+  </view>
+  <view class="content">
+    <view wx:if="{{curIndex === 0}}">书籍</view>
+    <view wx:if="{{curIndex === 1}}">电视剧</view>
+    <view wx:if="{{curIndex === 2}}">电影</view>
+    <view wx:if="{{curIndex === 3}}">动漫</view>
+  </view>
+</view>
+

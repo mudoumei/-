@@ -1,0 +1,15 @@
+<!--components/add/add.wxml-->
+<view class="{{isShow ? 'add-container show' : 'add-container'}}">
+  <view class="module" wx:for="{{modules}}" wx:key="index">
+    <view class="moduleIconContainer" hover-class="hover">
+     <image class="moduleIcon" src="{{item.imageUrl}}"></image> 
+    </view>
+   <view class="moduleText">{{item.title}}</view>
+  </view>
+  <view class="closecontainer">
+    <image src="{{closeUrl}}" bindtap="closePage" class="{{isShow ? 'close Rclose':'close'}}"></image>
+</view>
+</view>  
+
+
+

@@ -1,0 +1,86 @@
+/* components/home-show-info/index.wxss */
+/* @import "../../asset/css/billIcon.wxss"; */
+.info-container{
+  width: calc(100% - 40rpx);
+  margin:0 20rpx 50rpx 20rpx;
+  padding: 0 20rpx 30rpx 20rpx;
+  border-radius: 50rpx;
+  border:1rpx solid #acd2f9;
+}
+.title{
+  color: #95c0f8;
+  font-size:48rpx;
+  font-weight: 400;
+  padding:0 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom:1px solid #acd2f9;
+}
+.listIcon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right:10rpx;
+}
+.listbox{
+  display:flex;
+  /* height: 120rpx; */
+  border-bottom:1rpx solid #D5E7FE;
+  padding:20rpx 0;
+}
+.listTheme{
+  flex:0 0 150rpx;
+  height: 100%;
+  padding: 0 10rpx;
+  /* border-right:1rpx solid #b6daf6; */
+}
+.listTheme text{
+  font-weight: 700;
+  font-size: 24rpx;
+  color:#333333
+}
+.listcontent{
+  position: relative;
+}
+.listcontent::before{
+  content:'';
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 2rpx;
+  height: 80%;
+  background-color: #D5E7FE;
+}
+.listcontent .row view{
+  display: inline-block;
+}
+.listcontent .th text{
+  /* color: #fff; */
+  background-color: #deddfd;
+  border-radius: 20rpx;
+}
+.listcontent text{
+  font-size: 24rpx;
+  padding:0 10rpx;
+  margin:0 15rpx;
+}
+.listcontent .haveIcon{
+  padding: 0 10rpx;
+}
+.listcontent .haveIcon text{
+  padding: 0;
+  margin:0 6rpx;
+}
+.icon{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align:middle;
+}
+.dairy-text{
+  overflow: hidden;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 48rpx;
+}

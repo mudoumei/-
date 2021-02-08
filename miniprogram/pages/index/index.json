@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "headerNav": "/components/header-nav/headerNav",
+    "tabBar":"/components/custom-tab-bar/index",
+    "showInfo":"/components/home-show-info/index"
+  }
+}

@@ -1,4 +1,0 @@
-/**app.wxss**/
-.bg{
-  background: linear-gradient(#7dbbde, #fff)
-}

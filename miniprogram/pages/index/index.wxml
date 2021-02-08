@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view>
+  <headerNav title="首页"/>
+  <scroll-view style="height:{{height}}rpx" scrollY>
+  <view class="bg">
+    <view class="h-container">
+      <view class='date-info'>
+          <text>{{curTime}}</text>
+          <view>
+          <image class="weather-icon" src="{{IconUrl}}"></image>
+          <text style="text-align:right">  {{weather.temperature}}</text>
+       </view>
+       <text>{{curWeek}}</text>
+      </view>
+     <image src="{{baseUrl+'headerImage.png'}}" class="headerbg" mode="heightFix"></image> 
+    </view>
+    <showInfo></showInfo>
+  </view>
+  </scroll-view>
+  <tabBar active="{{0}}"/>
+</view>
+

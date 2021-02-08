@@ -1,0 +1,111 @@
+<!--components/home-show-info/index.wxml-->
+<view class="info-container">
+      <view class="title">今日点滴</view>
+      <view class="info-list">
+          <view class="listbox schedule">
+            <view class="listTheme">
+            <image src="/asset/image/circleIcon.png" class="listIcon"></image>
+              <text>日程提醒</text>
+            </view>
+            <view class="listcontent">
+              <view class='row'>
+                <view class='th' style="width:150rpx"><text>时间</text></view>
+                <view class='th'><text>主题</text></view>
+              </view>
+              <view class='row' wx:for="{{scheduleList}}" wx:key="index">
+                <view class='td' style="width:150rpx"><text>{{item.time}}</text></view>
+                <view class='td'><text>{{item.theme}}</text></view>
+              </view>
+          </view>
+        </view>
+        <view class="listbox bill">
+            <view class="listTheme">
+            <image src="/asset/image/circleIcon.png" class="listIcon"></image>
+              <text>今日账单</text>
+            </view>
+            <view class="listcontent">
+              <view class='row'>
+                <view class='th' style="width:150rpx"><text>时间</text></view>
+                <view class='th' style="width:250rpx"><text>类型</text></view>
+                <view class='th'><text>金额</text></view>
+              </view>
+              <view class='row' wx:for="{{billList}}" wx:key="index">
+                <view class='td' style="width:150rpx"><text>{{item.time}}</text></view>
+                <view class='td haveIcon' style="width:250rpx">
+                  <image src="{{item.iconUrl}}" class="icon"></image>
+                  <text>{{item.type}}({{item.detail}})</text></view>
+                <view class='td'><text>{{item.money}}</text></view>
+              </view>
+          </view>
+        </view>
+        <view class="listbox weekplan">
+            <view class="listTheme">
+            <image src="/asset/image/circleIcon.png" class="listIcon"></image>
+              <text>周计划</text>
+            </view>
+            <view class="listcontent">
+              <view class='row'>
+                <view class='th'><text>Todo</text></view>
+              </view>
+              <view class='row' wx:for="{{weekPlan.wholeWeekPlan}}" wx:key="index">
+                <view class='td haveIcon'>
+                  <image src="{{item.finished ? checkIconUrl : uncheckIconUrl}}" class="icon"></image>
+                  <text>{{item.detail}}</text></view>
+              </view>
+              <view class='row'>
+                <view class='th'><text>{{weekPlan.day}}</text></view>
+              </view>
+              <view class='row' wx:for="{{weekPlan.TodayPlan}}" wx:key="index">
+                <view class='td haveIcon'>
+                  <image src="{{item.finished ? checkIconUrl : uncheckIconUrl}}" class="icon"></image>
+                  <text>{{item.detail}}</text></view>
+              </view>
+          </view>
+        </view>
+        <view class="listbox monthplan">
+            <view class="listTheme">
+            <image src="/asset/image/circleIcon.png" class="listIcon"></image>
+              <text>月计划</text>
+            </view>
+            <view class="listcontent">
+              <view class='row'>
+                <view class='th'><text>{{monthPlan.date}}</text></view>
+              </view>
+              <view class='row' wx:for="{{monthPlan.TodayPlan}}" wx:key="index">
+                <view class="{{item.finished ?'plan-icon-check' : 'plan-icon-uncheck'}}"></view>
+                <view class='td haveIcon'>
+                  <image src="{{item.finished ? checkIconUrl : uncheckIconUrl}}" class="icon"></image>
+                  <text>{{item.detail}}</text></view>
+              </view>
+          </view>
+        </view>
+        <view class="listbox diary">
+            <view class="listTheme">
+            <image src="/asset/image/circleIcon.png" class="listIcon"></image>
+              <text>日记</text>
+            </view>
+            <view class="listcontent">
+              <view class='row'>
+                <view class='th'><text>{{dairy.title}}</text></view>
+              </view>
+              <view class='row'>
+                <view class='td'><text space="emsp" class="dairy-text">{{dairy.content}}</text></view>
+              </view>
+          </view>   
+        </view>
+        <view class="listbox memo">
+            <view class="listTheme">
+            <image src="/asset/image/circleIcon.png" class="listIcon"></image>
+              <text>便签</text>
+            </view>
+            <view class="listcontent">
+              <view class='row'>
+                <view class='th'><text>新增便签</text></view>
+              </view>
+              <view class='row'>
+                <view class='td'><text space="emsp" class="dairy-text">{{memo.content}}</text></view>
+              </view>
+          </view>   
+        </view>
+      </view>
+    </view>

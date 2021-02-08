@@ -1,0 +1,16 @@
+<!--components/custom-tab-bar/index.wxml-->
+<view class="tab-bar">
+  <view class="tab-bar-top"></view>
+  <view class="tab-bar-bottom"></view>
+  <view class="circle"></view>
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <image wx:if="{{item.isSpecial != null && item.isSpecial == true}}" src="{{item.iconPath}}" class='centerImage'></image>
+    <image wx:else class='cover-image' src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+    <view style="color: {{selected === index ? selectedColor : color}};font-size:24rpx">{{item.text}}</view>
+  </view>
+</view>
+<view class="{{isAdd ? 'mask bmask' : 'mask'}}" >
+</view>
+<view class="addcontainer" hidden="{{!isAdd}}">
+  <add bind:closeAdd='closeAdd' isShow="{{isAdd}}"></add>
+</view>

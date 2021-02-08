@@ -1,0 +1,108 @@
+/* pages/bill/bill.wxss */
+.th,.td{
+  display: flex;
+  color:#fff;
+}
+.th{
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+.td{
+  font-size: 40rpx;
+}
+.th view,.td view{
+  flex: 1;
+  padding-left: 30rpx;
+  text-align: left;
+}
+.td .firstBox,.th .firstBox{
+  flex:0 0 200rpx;
+  position: relative;
+}
+.td .firstBox::after{
+  content:'';
+  display: block;
+  position: absolute;
+  top: 25rpx;
+  right: 0;
+  width: 2rpx;
+  height: 50%;
+  background-color: #fff;
+}
+.month{
+  display:inline-block;
+  width: 60rpx;
+  padding-left: 5rpx;
+  font-size: 30rpx;
+  position: relative;
+  vertical-align: bottom;
+}
+.month::after{
+  content: '';
+  display: block;
+  position: absolute;
+  top:30rpx;
+  right:0;
+  width: 0;
+  height: 0;
+  border-color: #fff transparent transparent transparent;
+  border-style: solid;
+  border-width: 20rpx 12rpx 0 12rpx;
+}
+.row-h{
+  display: flex;
+  color:#CCC;
+  font-size: 28rpx;
+  justify-content:space-between;
+  padding:10rpx 30rpx;
+  border-bottom:1px solid #ddd;
+}
+.row-d{
+  display: flex;
+  height: 100rpx;
+  justify-content:space-between;
+  padding:30rpx;
+}
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.pay{
+  /* width: 300rpx; */
+  display: flex;
+  justify-content:space-between;
+}
+.pay{
+  /* width: 300rpx; */
+  display: flex;
+  justify-content:space-between;
+}
+.pay view{
+  margin-left: 20rpx;
+}
+.navBotoom{
+  display: flex;
+  justify-content:space-between;
+  position: relative;
+}
+.navBotoom text{
+  color:#fff;
+  font-size: 26rpx;
+  padding-left:30rpx
+}
+.historyIcon{
+  width: 136rpx;
+  height: 136rpx;
+  position: absolute;
+  right: 10rpx;
+  bottom:-35rpx
+}
+.addIcon{
+  width: 126rpx;
+  height: 126rpx;
+  position: absolute;
+  right: 130rpx;
+  bottom:-30rpx
+}

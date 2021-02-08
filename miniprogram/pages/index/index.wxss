@@ -1,0 +1,111 @@
+.headerbg{
+  position: absolute;
+  top: 0rpx;
+  right: 20rpx;
+  width:480rpx;
+  height: 368rpx;
+}
+.h-container{
+  position: relative;
+  width: 100%;
+  height: 350rpx;
+}
+.date-info{
+  position: absolute;
+  top: 80rpx;
+  left: 50rpx;
+  width: 300rpx;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.date-info text{
+  color:#fff;
+  font-size:48rpx;
+}
+.weather-icon{
+  width: 50rpx;
+  height: 50rpx;
+}
+/* .info-container{
+  width: calc(100% - 40rpx);
+  margin:0 20rpx 150rpx 20rpx;
+  padding: 0 20rpx 30rpx 20rpx;
+  border-radius: 50rpx;
+  border:1rpx solid #acd2f9;
+}
+.title{
+  color: #A7CAF8;
+  font-size:48rpx;
+  font-weight: 400;
+  padding:0 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom:1px solid #acd2f9;
+}
+.listIcon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right:10rpx;
+}
+.listbox{
+  display:flex;
+  border-bottom:1rpx solid #D5E7FE;
+  padding:20rpx 0;
+}
+.listTheme{
+  flex:0 0 150rpx;
+  height: 100%;
+  padding: 0 10rpx;
+}
+.listTheme text{
+  font-family: "YouYuan";
+  font-weight: 400;
+  font-size: 24rpx;
+}
+.listcontent{
+  position: relative;
+}
+.listcontent::before{
+  content:'';
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 2rpx;
+  height: 80%;
+  background-color: #D5E7FE;
+}
+.listcontent .row view{
+  display: inline-block;
+}
+.listcontent .th text{
+  background-color: #deddfd;
+  border-radius: 20rpx;
+}
+.listcontent text{
+  font-size: 24rpx;
+  padding:0 10rpx;
+  margin:0 15rpx;
+}
+.bill-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+.plan-icon-check{
+  width: 30rpx;
+  height: 30rpx;
+}
+.plan-icon-uncheck{
+  width: 30rpx;
+  height: 30rpx;
+}
+.dairy-text{
+  overflow: hidden;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 48rpx;
+} */

@@ -1,0 +1,8 @@
+<!--components/headerNav/headerNav.wxml-->
+<view style="height:{{height}}rpx;padding-top:{{statuHeight}}rpx;"></view>
+<view style="height:{{height}}rpx;padding-top:{{statuHeight}}rpx;" class="nav-container">
+<view style="height:{{titleHeight}}rpx;line-height:{{titleHeight}}rpx;text-align:center">
+  <text style="color:#fff; font-size={{fontSize}}">{{title}}</text>
+  <slot></slot>
+</view>
+</view>

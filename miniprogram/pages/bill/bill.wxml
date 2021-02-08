@@ -1,0 +1,77 @@
+<!--pages/bill/bill.wxml-->
+<view>
+  <headerNav title="账本" addHeight="{{240}}">
+    <view>
+      <view class="th">
+        <view class="firstBox"><text >2021年</text></view>
+        <view><text>收入</text></view>
+        <view><text>支出</text></view>
+      </view>
+      <view class="td">
+        <view class="firstBox">
+          <text style="font-size:60rpx;color:#EB8585;">01</text>
+          <text class="month">月</text>
+          <view class="more"></view>
+         </view>
+         <view>
+           <text style="font-size:34rpx">12,325.</text>
+           <text style="font-size:26rpx">21</text>
+          </view>
+         <view>
+          <text style="font-size:34rpx">10,245.</text>
+          <text style="font-size:26rpx">33</text>
+         </view>
+      </view>
+      <view class="navBotoom"> 
+        <text>账单明细</text>
+        <image src="{{historyBillUrl}}" class="historyIcon"></image>
+        <image src="{{addUrl}}" class="addIcon"></image>
+      </view>
+    </view>
+  </headerNav>
+  <view style="padding-top:30rpx;">
+    <view wx:for="{{historyBill}}" wx:key="index">
+      <view class="row-h">
+        <view>{{item.time}}</view>
+        <view class="pay">
+          <view wx:if="{{calc.calcIncome(item.list) != 0}}">
+            <text style="padding-right: 30rpx" >收入</text><text>{{calc.calcIncome(item.list)}}</text>
+          </view>
+          <view wx:if="{{calc.calcExpense(item.list) != 0}}">
+            <text style="padding-right: 30rpx">支出</text><text>{{calc.calcExpense(item.list)}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="row-d" wx:for="{{item.list}}" wx:key="index">
+        <view>
+          <image src="{{item.iconUrl}}" class="icon"></image>
+           <text>{{item.name}}</text>
+        </view>
+        <text>{{item.money>0 ? '+'+item.money : item.money}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<wxs module="calc">
+var calcExpense =function(list){
+    var sum=0;
+    list.forEach(function(ele){
+      if(ele.money<0){
+        sum+=ele.money
+      }
+    })
+    return -sum;
+  }
+var calcIncome=function(list){
+    var sum=0;
+    list.forEach(function(ele){
+      if(ele.money>0){
+        sum+=ele.money
+      }
+    })
+    return sum;
+  }
+  module.exports.calcExpense = calcExpense;
+  module.exports.calcIncome = calcIncome;
+</wxs>
+
