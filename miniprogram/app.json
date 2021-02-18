@@ -2,9 +2,18 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/calendar/calendar",
     "pages/recommend/recommend",
-    "pages/bill/bill"
+    "pages/bill/bill",
+    "pages/billAdd/billAdd",
+    "pages/billHistory/billHistory",
+    "pages/mome/mome",
+    "pages/collect/collect",
+    "pages/dairy/dairy",
+    "pages/calendar/calendar",
+    "pages/weekPlan/weekPlan",
+    "pages/monthPath/monthPath",
+    "pages/wishList/wishList"
+
   ],
   "permission": {
     "scope.userLocation": {
@@ -42,5 +51,6 @@
   },
   "style": "v2",
   "cloud": true,
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {"headerNav": "/components/header-nav/index"}
 }

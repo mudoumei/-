@@ -1,6 +1,6 @@
 <!--pages/bill/bill.wxml-->
 <view>
-  <headerNav title="账本" addHeight="{{240}}">
+  <headerNav title="账本" addHeight="{{addHeight}}" isBack="{{true}}">
     <view>
       <view class="th">
         <view class="firstBox"><text >2021年</text></view>
@@ -24,13 +24,13 @@
       </view>
       <view class="navBotoom"> 
         <text>账单明细</text>
-        <image src="{{historyBillUrl}}" class="historyIcon"></image>
-        <image src="{{addUrl}}" class="addIcon"></image>
+        <image src="{{historyBillUrl}}" class="historyIcon" data-path="/pages/billHistory/billHistory" bindtap="goPath"></image>
+        <image src="{{addUrl}}" class="addIcon" data-path="/pages/billAdd/billAdd" bindtap="goPath"></image>
       </view>
     </view>
   </headerNav>
-  <view style="padding-top:30rpx;">
-    <view wx:for="{{historyBill}}" wx:key="index">
+  <scroll-view style="height:{{height}}rpx" scrollY class="billContainer">
+    <view wx:for="{{historyBill}}" wx:key="index" class="historyBill">
       <view class="row-h">
         <view>{{item.time}}</view>
         <view class="pay">
@@ -50,7 +50,7 @@
         <text>{{item.money>0 ? '+'+item.money : item.money}}</text>
       </view>
     </view>
-  </view>
+  </scroll-view>
 </view>
 <wxs module="calc">
 var calcExpense =function(list){

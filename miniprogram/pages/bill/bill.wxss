@@ -106,3 +106,12 @@
   right: 130rpx;
   bottom:-30rpx
 }
+.billContainer{
+ box-sizing: border-box;
+}
+.historyBill:first-child{
+  padding-top: 30rpx;
+}
+.historyBill:last-child{
+  padding-bottom: 30rpx;
+}

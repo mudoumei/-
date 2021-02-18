@@ -12,8 +12,11 @@ Component({
     addHeight:{
       type: Number,
       value: 0
+    },
+    isBack:{
+      type:Boolean,
+      value:false
     }
-
   },
 
   /**
@@ -27,7 +30,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goback(){
+      wx.navigateBack({
+        delta: 1
+      })
+    }
   },
   ready: function (options) {
     let systemInfo = wx.getSystemInfoSync();
@@ -39,7 +46,7 @@ Component({
       fontSize: fontSize,
       statuHeight: statuHeight, 
       titleHeight: titleHeight,
-      height:titleHeight+statuHeight+this.properties.addHeight
+      height:titleHeight+statuHeight+this.properties.addHeight* pxToRpxScale
     })
   },
 })

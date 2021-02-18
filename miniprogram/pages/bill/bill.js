@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    addHeight:120,
+    height:0,
     historyBill:[
     {
       time:'1月10日 星期日',
@@ -76,6 +78,13 @@ Page({
     historyBillUrl:baseUrl+'history.png',
     addUrl:baseUrl+'add.png'
   },
+  goPath(e){
+    const dataset = e.currentTarget.dataset;
+    const path = dataset.path;
+    wx.navigateTo({
+        url: path
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -87,7 +96,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let systemInfo = wx.getSystemInfoSync();
+    let pxToRpxScale = 750 / systemInfo.windowWidth; //px转换到rpx的比例
+    let windowHeight = systemInfo.windowHeight*pxToRpxScale;
+    let statuHeight = systemInfo.statusBarHeight * pxToRpxScale; //状态栏的高度
+    let titleHeight = 44 * pxToRpxScale;
+    console.log(windowHeight,statuHeight,titleHeight);
+    this.setData({
+        height:windowHeight - statuHeight - titleHeight - this.data.addHeight* pxToRpxScale
+      })
   },
 
   /**

@@ -1,6 +1,6 @@
 <!--components/add/add.wxml-->
 <view class="{{isShow ? 'add-container show' : 'add-container'}}">
-  <view class="module" wx:for="{{modules}}" wx:key="index">
+  <view class="module" wx:for="{{modules}}" wx:key="index" data-path="{{item.pagePath}}" bindtap="goPath">
     <view class="moduleIconContainer" hover-class="hover">
      <image class="moduleIcon" src="{{item.imageUrl}}"></image> 
     </view>
