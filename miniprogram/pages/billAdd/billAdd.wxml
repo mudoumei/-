@@ -1,2 +1,88 @@
 <!--pages/billAdd/billAdd.wxml-->
-<text>pages/billAdd/billAdd.wxml</text>
+<view style="height:100%;overflow:hidden">
+  <headerNav>
+    <view class="headerTab">
+      <text class="{{active=='expanse'?'active':''}}" bindtap="isExpanse">支出</text>
+      <text class="{{active=='income'?'active':''}}" bindtap="isIncome">收入</text>
+    </view>
+  </headerNav>
+  <view class="container" bindtap="changeSelect">
+    <input class="inputMoney" type="digit" placeholder="0.00" value="{{inputMoney}}" placeholder-class="placeholder"
+      bindblur="formatValue"/>
+    <view class="selectInfo" >
+      <view class="{{select=='category' ? 'select':''}}" data-select="category">
+       <text class="iconfont icon-fenlei">分类</text>
+        <text>{{active=='expanse'?'支出':'收入'}}>{{currentList[current].type}}</text></view>
+      <view class="{{'categoryList '+state1}}" wx:if="{{showCategory}}" data-select="category">
+        <view class="close" bindtap="closeList">
+          <text class="clickArea">收起</text>
+        </view>
+        <view class="content">
+          <view class="left">
+            <view class="th">分类</view>
+            <view class="td">{{active=='expanse'?'支出':'收入'}}</view>
+          </view>
+          <view class="right">
+            <swiper vertical style="width:100%;height:100%" display-multiple-items="{{7}}" bindchange="categoryChange"
+              current="{{current}}">
+              <swiper-item wx:for="{{3}}" class="item" wx:key="index"></swiper-item>
+              <swiper-item wx:for="{{currentList}}" wx:key="index"
+                class="{{selectItem == item.type? 'item selectItem':'item'}}">
+                <image src="{{item.iconUrl}}"></image>
+                <text>{{item.type}}</text>
+              </swiper-item>
+              <swiper-item wx:for="{{3}}" class="item" wx:key="index"></swiper-item>
+            </swiper>
+          </view>
+        </view>
+      </view>
+      <view class="{{select=='date' ? 'select':''}}" data-select="date">
+        <text class="iconfont icon-bar_icon_shijian">时间</text>
+        <text wx:if="{{selectMonth}}">{{format.formatDate(selectMonth+1)}}月{{format.formatDate(selectDay+1)}}日</text>
+      </view>
+      <view class="{{'calendarList '+state2}}" wx:if="{{showCalendar}}" data-select="date">
+        <view class="close">
+          <text class="text">日期</text>
+          <text class="clickArea" bindtap="closeList">收起</text>
+        </view>
+        <view class="content">
+          <view class="left">
+            <swiper vertical style="width:100%;height:100%" display-multiple-items="{{7}}"
+              current="{{currentL}}" bindchange="yearChange">
+              <swiper-item wx:for="{{yearList}}" wx:key="index">
+                <text class="{{yearList[selectYear]==item ? 'itemText selectItemText':'itemText'}}">{{item}}年</text>
+              </swiper-item>
+            </swiper>
+          </view>
+          <view class="center">
+            <swiper vertical style="width:100%;height:100%" display-multiple-items="{{7}}" circular
+              current="{{currentC}}" bindchange="monthChange">
+              <swiper-item wx:for="{{12}}" wx:key="index">
+                <text class="{{selectMonth==item ? 'itemText selectItemText':'itemText'}}">{{item+1}}月</text>
+              </swiper-item>
+            </swiper>
+          </view>
+          <view class="right">
+            <swiper vertical style="width:100%;height:100%" display-multiple-items="{{7}}" circular
+              current="{{currentR}}" bindchange="dayChange">
+              <swiper-item wx:for="{{dayList}}" wx:key="index">
+                <text space="emsp" 
+                class="{{dayList[selectDay]==item ? 'itemText selectItemText':'itemText'}}">{{item}}</text>
+              </swiper-item>
+            </swiper>
+          </view>
+        </view>
+      </view>
+      <view class="{{select=='message' ? 'select message':'message'}}" data-select="message">
+        <text class="iconfont icon-beizhu">备注</text>
+        <input placeholder="..." data-select="message" bindblur="saveMsg"/>
+      </view>
+    </view>
+  </view>
+</view>
+<wxs module="format">
+var formatDate =function(str){
+    return str<10 ? '0'+str : str;
+  }
+  module.exports.formatDate = formatDate;
+</wxs>

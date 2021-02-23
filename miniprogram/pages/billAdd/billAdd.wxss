@@ -1,1 +1,209 @@
 /* pages/billAdd/billAdd.wxss */
+.headerTab text{
+  display: inline-block;
+  padding: 0 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  color:#fff
+}
+.active{
+  position: relative;
+}
+.active::after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 50%;
+  height: 4rpx;
+  background-color: #FFA4A4;
+}
+.container{
+  width: 100%;
+  height: 1206rpx;
+}
+.inputMoney{
+  padding: 60rpx 0 20rpx 10rpx;
+  margin-left: 60rpx;
+  font-size: 48rpx;
+  line-height: 60rpx;
+  color:#A7CAF8;
+  border-bottom:4rpx solid #BBCFFF;
+}
+.placeholder{
+  color:#A7CAF8;
+}
+.selectInfo>view{
+  padding: 20rpx 0;
+  padding-left: 60rpx;
+  font-size: 30rpx;
+  border-bottom:2rpx solid #F8FBFF;
+}
+.select{
+  background-color: #F8FBFF;
+}
+.selectInfo>view text:first-child{
+  color: #A7CAF8;
+  padding-right:40rpx;
+}
+.message{
+  display: flex;
+}
+.message input{
+  flex:1;
+}
+.categoryList,.calendarList{
+  position: absolute;
+  padding: 0!important;
+  bottom: 0;
+  width: 100%;
+  height: 620rpx;
+  z-index: 1;
+}
+.calendarList{
+  z-index: 2;
+}
+.close{
+ width: 100%;
+ height: 60rpx;
+ box-shadow:0rpx 2rpx 6rpx #ddd;
+}
+.content{
+  position: relative;
+}
+.content::after{
+  content:'';
+  display: block;
+  position: absolute;
+  top: 240rpx;
+  width: 100%;
+  height: 88rpx;
+  z-index: -1;
+  box-shadow:0rpx 2rpx 6rpx #eee;
+}
+.content::before{
+  content:'';
+  display: block;
+  position: absolute;
+  top: 240rpx;
+  width: 100%;
+  height: 88rpx;
+  z-index: -1;
+  box-shadow:0rpx -2rpx 6rpx #eee;
+}
+.text{
+  float: left;
+  padding:10rpx 20rpx;
+}
+.clickArea{
+  position: relative;
+  float: right;
+  padding:10rpx 40rpx;
+  color:#A7CAF8;
+}
+.clickArea::after{
+  content:'';
+  position: absolute;
+  right: 15rpx;
+  top: 50%;
+  display: block;
+  width: 10rpx;
+  height: 10rpx;
+  border-right: 2rpx solid #BFBFBF;
+  border-bottom: 2rpx solid #BFBFBF;
+  transform:translateY(-50%) rotateZ(45deg)
+}
+.content{
+  display: flex;
+  width: 100%;
+  height: calc(100% - 60rpx);
+}
+.left,.right,.center{
+  flex:1;
+  height: 100%;
+}
+.categoryList .left .th{
+  margin-top:160rpx;
+  margin-left: 100rpx;
+  font-size: 26rpx;
+  color:#BFBFBF;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.categoryList .left .td{
+  position: relative;
+  text-align: center;
+  font-size: 36rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.categoryList .left .td::after{
+  content:'';
+  position: absolute;
+  right: 15rpx;
+  top: 50%;
+  display: block;
+  width: 10rpx;
+  height: 10rpx;
+  border-right: 2rpx solid #BFBFBF;
+  border-bottom: 2rpx solid #BFBFBF;
+  transform:translateY(-50%) rotateZ(-45deg);
+}
+.categoryList .right .item{
+  padding-left: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.categoryList .right .selectItem{
+  padding-left: 40rpx;
+  font-size: 30rpx;
+}
+.categoryList .right image{
+  margin-right: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+.categoryList .selectItem image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.calendarList .left{
+  text-align: right;
+}
+.calendarList .center{
+  text-align: center;
+}
+.calendarList .itemText{
+  color:#1a1a1a!important;
+  opacity: 0.7;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.calendarList .selectItemText{
+  opacity: 1;
+  font-size:34rpx
+}
+.show{
+  transform:translateY(620rpx);
+  animation: showCategoryList 0.5s ease-out;
+  animation-fill-mode:forwards;
+  }
+.hide{
+  transform:translateY(620rpx);
+  animation: hideCategoryList 0.5s ease-in;
+  animation-fill-mode:forwards;
+  }
+@keyframes showCategoryList
+{
+  from {transform:translateY(620rpx);}
+  to {transform:translateY(0);}
+}
+@keyframes hideCategoryList
+{
+  from {transform:translateY(0rpx);}
+  to {transform:translateY(620);}
+}

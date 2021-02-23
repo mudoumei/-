@@ -7,6 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    selectYear:'',
+    selectMonth:'',
+    showCalendar:false,
     addHeight:120,
     height:0,
     historyBill:[
@@ -85,6 +88,27 @@ Page({
         url: path
     })
   },
+  showCalendarM(){
+    if(this.data.showCalendar){
+      return ;
+    }
+  this.selectComponent('#calendar').changeList(); 
+    this.setData({
+      showCalendar : true
+    })
+  },
+  hideCalendarM(){
+    this.setData({
+      showCalendar : false
+    })
+  },
+  getYearMonth(e){
+    let {year,month}=e.detail;
+    this.setData({
+      selectYear:year,
+      selectMonth:month
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -101,9 +125,13 @@ Page({
     let windowHeight = systemInfo.windowHeight*pxToRpxScale;
     let statuHeight = systemInfo.statusBarHeight * pxToRpxScale; //状态栏的高度
     let titleHeight = 44 * pxToRpxScale;
-    console.log(windowHeight,statuHeight,titleHeight);
+    let date =new Date();
+    let y=date.getFullYear();
+    let m=date.getMonth()+1
     this.setData({
-        height:windowHeight - statuHeight - titleHeight - this.data.addHeight* pxToRpxScale
+        height:windowHeight - statuHeight - titleHeight - this.data.addHeight* pxToRpxScale,
+        selectYear:y,
+        selectMonth: m>10 ? m : '0'+m 
       })
   },
 

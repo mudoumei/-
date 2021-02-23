@@ -1,2 +1,42 @@
 <!--pages/billHistory/billHistory.wxml-->
-<text>pages/billHistory/billHistory.wxml</text>
+
+<headerNav title="年度账单" addHeight="{{addHeight}}" isBack="{{true}}">
+  <view style="color:#fff">
+  <view class="year"><text>2021年</text></view>
+  <view class="balance">
+    <text class="balanceText">结余</text>
+    <text class="balanceVal">{{yearBalance}}</text>
+  </view>
+  <view class="detail">
+    <view class="income"><text class="text">收入</text>
+      <view class="val">
+        <text style="font-size:34rpx">{{handleNum.toThousands(yearIncome)}}</text>
+        <text style="font-size:26rpx">{{handleNum.getFloat(yearIncome)}}</text>
+      </view></view>
+    <view class="expanse"><text class="text">支出</text>
+      <view class="val">
+        <text style="font-size:34rpx">{{handleNum.toThousands(yearExpanse)}}</text>
+        <text style="font-size:26rpx">{{handleNum.getFloat(yearExpanse)}}</text>
+      </view></view>
+  </view>
+  </view>
+</headerNav>
+<view class="content">
+  <view class="th">
+    <text>月份</text>
+    <text>收入</text>
+    <text>支出</text>
+    <text>结余</text>
+  </view>
+  <scroll-view scroll-y style="height:{{height}}rpx">
+   <view class="td" wx:for="{{yearBill}}">
+    <text>{{item.month}}月</text>
+    <text>{{item.income}}</text>
+    <text>{{item.expanse}}</text>
+    <text>{{item.balance}}</text>
+  </view>
+    <text class="nomore">到底了~</text>
+  </scroll-view>
+</view>
+<wxs src="../../utils/handleNum.wxs" module="handleNum">
+</wxs>

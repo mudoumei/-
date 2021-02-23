@@ -42,7 +42,7 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.14.4",
+  "libVersion": "2.15.0",
   "appid": "wxbfad07074efb7d7f",
   "projectname": "miniprogram-1",
   "debugOptions": {
@@ -65,12 +65,6 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/calendar/calendar",
-          "pathName": "pages/calendar/calendar",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/add/add",
           "pathName": "pages/add/add",
           "query": "",
@@ -85,6 +79,19 @@
         {
           "name": "pages/bill/bill",
           "pathName": "pages/bill/bill",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/billHistory/billHistory",
+          "pathName": "pages/billHistory/billHistory",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/billAdd/billAdd",
+          "pathName": "pages/billAdd/billAdd",
+          "query": "",
           "scene": null
         }
       ]

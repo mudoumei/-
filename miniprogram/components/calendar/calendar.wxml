@@ -1,0 +1,61 @@
+<!--components/calendar/calendar.wxml-->
+<view class="container" style="height:{{containerHeight}}rpx">
+  <view class="date">
+    <view class="prev" bindtap="prevMonth"></view>
+    <view class="dateVal">
+      <text class="val">{{selectYearMonth.year}}</text>年
+      <text class="val">{{selectYearMonth.month}}</text>月
+    </view>
+    <view class="next" bindtap="nextMonth"></view>
+  </view>
+  <view class="day-th">
+    <view wx:for="{{weekdays}}" wx:key="index">{{item}}</view>
+  </view>
+  <view class="day-td">
+    <view wx:for="{{dates}}" wx:key="index" data-item="{{item}}"
+    style="opacity:{{timeUtil.isCurMonth(item,selectYearMonth) ? 1 : 0}}"
+    class="{{timeUtil.dateClass(item,selectDate)}}"
+    bindtap="changeSelectDate"
+    >{{timeUtil.getDates(item)}}</view>
+  </view>
+  <view class="close" bindtap="closeCalender">收起</view>
+</view>
+<wxs module="timeUtil">
+var getDates =function(date){
+  var date =getDate(date);
+  return date.getDate()
+  }
+var isCurMonth=function(date,selectYearMonth){
+  var date =getDate(date);
+  var y=date.getFullYear();
+  var m=date.getMonth()+1;
+  return y==selectYearMonth.year && m==selectYearMonth.month
+}
+var isToday=function(date){
+  var date =getDate(date);
+  var cdate =getDate();
+  var y=date.getFullYear();
+  var m=date.getMonth();
+  var d=date.getDate();
+  var cy=cdate.getFullYear();
+  var cm=cdate.getMonth();
+  var cd=cdate.getDate();
+  return y==cy && m==cm && d==cd
+}
+var isSelect=function(date,selectDate){
+  var date =getDate(date);
+  var y=date.getFullYear();
+  var m=date.getMonth()+1;
+  var d=date.getDate();
+  return y==selectDate.year && m==selectDate.month && d==selectDate.date
+}
+var dateClass=function(item,selectDate){
+  var classOne=isToday(item)? 'isToday':'';
+  var classTwo=isSelect(item,selectDate) ? ' isSelect':'';
+  return classOne+classTwo;
+}
+module.exports.getDates = getDates;
+module.exports.isCurMonth = isCurMonth;
+module.exports.dateClass = dateClass;
+
+</wxs>

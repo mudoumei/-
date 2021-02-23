@@ -3,15 +3,17 @@
   <headerNav title="账本" addHeight="{{addHeight}}" isBack="{{true}}">
     <view>
       <view class="th">
-        <view class="firstBox"><text >2021年</text></view>
+        <view class="firstBox"><text >{{selectYear}}年</text></view>
         <view><text>收入</text></view>
         <view><text>支出</text></view>
       </view>
       <view class="td">
         <view class="firstBox">
-          <text style="font-size:60rpx;color:#EB8585;">01</text>
-          <text class="month">月</text>
-          <view class="more"></view>
+          <text style="font-size:60rpx;color:#EB8585;">{{selectMonth}}</text>
+          <text class="month" bindtap="showCalendarM">月</text>
+          <view hidden="{{!showCalendar}}">
+           <calendar id="calendar" class="calendar" bind:hideCalendar="hideCalendarM" bind:getYearMonth="getYearMonth"></calendar> 
+          </view>
          </view>
          <view>
            <text style="font-size:34rpx">12,325.</text>
@@ -29,7 +31,7 @@
       </view>
     </view>
   </headerNav>
-  <scroll-view style="height:{{height}}rpx" scrollY class="billContainer">
+  <scroll-view style="height:{{height}}rpx" class="billContainer" scroll-y>
     <view wx:for="{{historyBill}}" wx:key="index" class="historyBill">
       <view class="row-h">
         <view>{{item.time}}</view>

@@ -1,0 +1,15 @@
+var toThousands=function(str) {
+  var num=str.split('.')[0];
+  var result = '';
+  while (num.length > 3) {
+      result = ',' + num.slice(-3) + result;
+      num = num.slice(0, num.length - 3);
+  }
+  if (num) { result = num + result; }
+  return result+'.';
+}
+var getFloat=function(str){
+return str.split('.')[1];
+}
+module.exports.toThousands = toThousands;
+module.exports.getFloat = getFloat;

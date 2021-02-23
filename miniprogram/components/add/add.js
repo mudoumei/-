@@ -59,7 +59,6 @@ Component({
       this.triggerEvent('closeAdd');
     },
     goPath(e){
-      console.log(111);
       const dataset = e.currentTarget.dataset;
       const path = dataset.path;
       wx.navigateTo({

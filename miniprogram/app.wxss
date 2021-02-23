@@ -1,4 +1,5 @@
 /**app.wxss**/
+@import './asset/css/iconfont/iconfont.wxss';
 .bg{
   background: linear-gradient(#98d6f9, #fff,#fff);
   z-index: -2;
@@ -7,6 +8,6 @@ text,view{
   font-family:"Eras ITC", "Eras Light ITC",  "sans-serif" ;
   font-weight: 400;
 }
-view{
+view,text{
   box-sizing: border-box;
 }

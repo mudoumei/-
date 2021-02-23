@@ -1,0 +1,111 @@
+/* components/calendar/calendar.wxss */
+.container{
+  position: relative;
+  padding:0 50rpx!important;
+  width: 100%;
+  border:2rpx solid #B9D8FF;
+  background-color: #fff;
+}
+.date{
+  position: relative;
+  width: 100%;
+}
+.dateVal{
+  margin:0 160rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color:#B9D8FF;
+  font-size:30rpx;
+}
+.val{
+  display: inline-block;
+  text-align: center;
+  padding:0 30rpx;
+  color:#000
+}
+.prev{
+  content:'';
+  position: absolute;
+  top: 50%;
+  left: 10rpx;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border:15rpx solid transparent;
+  border-right:20rpx solid #B9D8FF;
+}
+.next{
+  content:'';
+  position: absolute;
+  top: 50%;
+  right: 10rpx;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border:15rpx solid transparent;
+  border-left:20rpx solid #B9D8FF;
+}
+.day-th{  
+  width: 100%;
+  height: 80rpx;
+  line-height:80rpx;
+  color: #B9D8FF;
+}
+.day-th view,.day-td view{
+  display: inline-block;
+  width: calc(100% / 7);
+  font-size: 30rpx;
+  text-align: center;
+}
+.day-td{
+  width: 100%;
+  height: 80rpx;
+  line-height:80rpx;
+  color:#000
+}
+.isToday{
+  position: relative;
+  color:#fff;
+  z-index: 11;
+}
+.isToday::before{
+ content:'';
+ display:block;
+ position: absolute;
+ border-radius: 50%;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ width: 58rpx;
+ height: 58rpx;
+ border:2rpx solid #B9D8FF;
+ background-color: #B9D8FF;
+ z-index: -1;
+}
+.isSelect{
+  position: relative;
+  z-index: 11;
+}
+.isSelect::before{
+  content:'';
+  display:block;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 58rpx;
+  height: 58rpx;
+  border:2rpx solid #B9D8FF;
+  z-index: -1;
+ }
+ .close{
+   position: absolute;
+   color:#B9D8FF;
+   font-size: 25rpx;
+   line-height: 30rpx;
+   bottom: 10rpx;
+   right: 80rpx;
+  text-decoration-line: underline;
+ }
