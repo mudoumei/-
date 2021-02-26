@@ -1,12 +1,15 @@
 
 // pages/bill/bill.js
 const baseUrl=getApp().globalData.baseUrl+'billIcon/';
+const globalDate=getApp().globalData
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    top:0,
+    state:'',
     selectYear:'',
     selectMonth:'',
     showCalendar:false,
@@ -94,13 +97,24 @@ Page({
     }
   this.selectComponent('#calendar').changeList(); 
     this.setData({
-      showCalendar : true
+      showCalendar : true,
+      state:'show'
     })
   },
   hideCalendarM(){
+    let _this=this;
     this.setData({
-      showCalendar : false
+      state : 'hide'
     })
+    setTimeout(()=>{
+      _this.setData({
+        showCalendar : false
+      })
+    },500)
+  },
+  closeCalender(e){
+    if(e.target.dataset.target!=='calendar')
+    this.hideCalendarM()
   },
   getYearMonth(e){
     let {year,month}=e.detail;
@@ -120,18 +134,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let systemInfo = wx.getSystemInfoSync();
-    let pxToRpxScale = 750 / systemInfo.windowWidth; //px转换到rpx的比例
-    let windowHeight = systemInfo.windowHeight*pxToRpxScale;
-    let statuHeight = systemInfo.statusBarHeight * pxToRpxScale; //状态栏的高度
-    let titleHeight = 44 * pxToRpxScale;
+    let {windowHeight,statuHeight,pxToRpxScale,titleHeight}=globalDate
     let date =new Date();
     let y=date.getFullYear();
     let m=date.getMonth()+1
     this.setData({
         height:windowHeight - statuHeight - titleHeight - this.data.addHeight* pxToRpxScale,
         selectYear:y,
-        selectMonth: m>10 ? m : '0'+m 
+        selectMonth: m>10 ? m : '0'+m,
+        top:statuHeight+titleHeight+65*pxToRpxScale
       })
   },
 

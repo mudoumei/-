@@ -1,7 +1,6 @@
 // app.js
 App({
   globalData: {
-    baseUrl: 'cloud://online-note-6gqj2hvff9ca44ee.6f6e-online-note-6gqj2hvff9ca44ee-1304944671/'
   },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
@@ -18,7 +17,22 @@ App({
    * 当小程序启动，或从后台进入前台显示，会触发 onShow
    */
   onShow: function (options) {
-    
+    let systemInfo = wx.getSystemInfoSync();
+    let pxToRpxScale = 750 / systemInfo.windowWidth; //px转换到rpx的比例
+    let fontSize = systemInfo.fontSizeSetting * pxToRpxScale;// 用户设置的字体大小
+    let statuHeight = systemInfo.statusBarHeight * pxToRpxScale; //状态栏的高度
+    let windowHeight = systemInfo.windowHeight*pxToRpxScale;
+    let titleHeight = 44 * pxToRpxScale;
+    let commonHeight=windowHeight-titleHeight-statuHeight
+    this.globalData={
+      baseUrl: 'cloud://online-note-6gqj2hvff9ca44ee.6f6e-online-note-6gqj2hvff9ca44ee-1304944671/',
+      fontSize: fontSize,
+      pxToRpxScale:pxToRpxScale,
+      statuHeight: statuHeight, 
+      windowHeight: windowHeight,
+      titleHeight:titleHeight,
+      commonHeight:commonHeight
+    }
   },
 
   /**

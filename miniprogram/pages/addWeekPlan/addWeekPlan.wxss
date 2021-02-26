@@ -1,0 +1,67 @@
+/* pages/addWeekPlan/addWeekPlan.wxss */
+.date{
+  display: flex;
+  line-height: 88rpx;
+  height: 88rpx;
+  font-size: 30rpx;
+}
+.date .th{
+  padding:0 30rpx;
+  display: flex;
+  color: #A7CAF8;
+}
+.th{
+  color: #A7CAF8;
+  line-height: 100rpx;
+}
+.box{
+  padding: 0 40rpx;
+}
+.planList{
+  position: relative;
+}
+.addCount{
+  position: absolute;
+  color:#B9D8FF;
+  font-size: 44rpx;
+  line-height: 88rpx;
+  top: 0;
+  right: 0;
+}
+.row{
+  display: flex;
+  height: 100rpx;
+  margin-bottom: 10rpx;
+  align-items:center;
+}
+.row .num{
+  flex:0 0 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: #C9D1FC;
+  color:#fff;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.row .input{
+  padding: 0 40rpx;
+  flex:0 0 450rpx;
+  height: 88rpx;
+  border:2rpx solid #C9D1FC;
+  border-radius: 10rpx;
+  color:#1a1a1a;
+  font-size: 32rpx;
+}
+.row .del{
+  color:#d81e06;
+}
+.day{ 
+  width: 120rpx;
+  padding:0 20rpx;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+}

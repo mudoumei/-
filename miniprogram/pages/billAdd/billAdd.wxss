@@ -59,6 +59,7 @@
   bottom: 0;
   width: 100%;
   height: 620rpx;
+  background-color: #fff;
   z-index: 1;
 }
 .calendarList{
@@ -155,10 +156,12 @@
   height: 80rpx;
   line-height: 80rpx;
   font-size: 26rpx;
+  opacity: 0.8;
 }
 .categoryList .right .selectItem{
   padding-left: 40rpx;
   font-size: 30rpx;
+  opacity: 1;
 }
 .categoryList .right image{
   margin-right: 20rpx;
@@ -186,6 +189,30 @@
 .calendarList .selectItemText{
   opacity: 1;
   font-size:34rpx
+}
+.save{
+  position: absolute;
+  left: 30rpx;
+  bottom: 20rpx;
+  background: linear-gradient(90deg,#EEDEFB, #C1DCFF);
+  color:#fff;
+  width: 60%;
+  text-align: center;
+  font-size: 40rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}
+.another{
+  width: 30%;
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+  color:#9F9F9F;
+  background-color: #EFEFEF;
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
 }
 .show{
   transform:translateY(620rpx);

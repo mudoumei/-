@@ -1,5 +1,5 @@
 /* components/home-show-info/index.wxss */
-/* @import "../../asset/css/billIcon.wxss"; */
+@import '/asset/css/iconfont/iconfont.wxss';
 .info-container{
   width: calc(100% - 40rpx);
   margin:0 20rpx 50rpx 20rpx;
@@ -64,11 +64,11 @@
   margin:0 15rpx;
 }
 .listcontent .haveIcon{
-  padding: 0 10rpx;
+  line-height: 40rpx;
 }
 .listcontent .haveIcon text{
   padding: 0;
-  margin:0 6rpx;
+  line-height: 40rpx;
 }
 .icon{
   width: 30rpx;
@@ -83,4 +83,9 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-height: 48rpx;
+}
+.iconfont:before{
+  padding: 0 ;
+  color:#D5E7FE;
+  font-size: 30rpx;
 }

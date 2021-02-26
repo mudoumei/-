@@ -7,7 +7,17 @@
   z-index: 1;
 }
 .back{
-  position: absolute;
-  left: 30rpx;
-  color:#fff
+  float: left;
+  margin-left: 30rpx;
+  width: 30rpx;
+  line-height: 88rpx;
+}
+.back::after{
+ content:'';
+ display: inline-block;
+ width: 20rpx;
+ height: 20rpx;
+ border-top: 4rpx solid #fff;
+ border-left: 4rpx solid #fff;
+ transform: rotateZ(-45deg);
 }

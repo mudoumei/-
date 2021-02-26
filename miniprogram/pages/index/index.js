@@ -2,6 +2,7 @@
 // 获取应用实例
 var amapFile = require('../../utils/amap-wx.js');
 var timeUtils  =require('../../utils/time-utils.js')
+const globalDate=getApp().globalData
 Page({
   /**
    * 页面的初始数据
@@ -77,11 +78,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    let systemInfo = wx.getSystemInfoSync();
-    let pxToRpxScale = 750 / systemInfo.windowWidth; //px转换到rpx的比例
-    let windowHeight = systemInfo.windowHeight*pxToRpxScale;
-    let statuHeight = systemInfo.statusBarHeight * pxToRpxScale; //状态栏的高度
-    let titleHeight = 44 * pxToRpxScale;
+    let {windowHeight,statuHeight,pxToRpxScale,titleHeight}=globalDate
     let tabHeight =49 * pxToRpxScale;
     console.log(windowHeight,statuHeight,titleHeight,tabHeight);
     this.setData({

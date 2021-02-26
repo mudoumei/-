@@ -155,21 +155,23 @@ Page({
     ],
     state1:'',
     state2:'',
-    current:0,
     showCategory:false,
     showCalendar:false,
     inputMoney:'',
     yearList:[],
     dayList:[],
+    current:0,
     currentL:7,
     currentC:0,
     currentR:0,
     selectDay:0,
     selectMonth:0,
     selectYear:10,
-    curDate:{},
-    msg:''
+    msg:'',
+    stopClose:false,
+    billdata:{}
   },
+  //控制月份12-1的跳转
   scrollMonth(m){
     return m<0 ? 12+m : m
   },
@@ -223,6 +225,7 @@ Page({
       dayList:dlist
     })
   },
+  //输入钱数的合理化
   formatValue(e) {
     let value=e.detail.value
     let num = value.toString(); //先转换成字符串类型
@@ -239,6 +242,7 @@ Page({
     })
     console.log(num);
   },
+  //点击收起按钮收起列表
   closeList(){
     let _this=this;
     if(this.data.select=='category'){
@@ -285,12 +289,23 @@ Page({
       currentList:this.data.incomeList
     })
   },
+  //支出和收入页面切换
   categoryChange(e){
     let i=e.detail.current;
       this.setData({
         current:i,
         selectItem : this.data.currentList[i].type
     })
+  },
+  //点击列表区域，阻止收起列表（解决下面方法点击区域外部收起列表缺陷）
+  stopCloseM(e){
+    let select = e.currentTarget.dataset.select;
+    if(select == 'category'||select == 'date'){
+      this.setData({
+        stopClose:true
+      })
+      console.log('stopCloseM');
+    }
   },
   changeSelect(e) {
     let select = e.target.dataset.select;
@@ -314,9 +329,17 @@ Page({
       })
       return ;
     }
+    //点击category和date意外区域收起列表
     if(select !== 'category'||select !== 'date'){
+      if(this.data.stopClose){
+        this.setData({
+          stopClose:false
+        })
+        console.log(2);
+        return ;
+      }
       this.setData({
-        select: '',
+        select: select?select:'',
         state2:'hide',
         showCalendar:false,
         showCategory:false,
@@ -325,23 +348,40 @@ Page({
       return ;
     }
   },
+  //保存备注信息
   saveMsg(e){
     this.setData({
       msg:e.detail.value
     })
     console.log(e.detail.value);
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  formatDate(year,month,day){
+    month= month<10 ? '0'+month : month;
+    return `${year} ${month} ${day}`
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  savedata(){
+    let {inputMoney,current,currentList,yearList,dayList,selectDay,selectMonth,selectYear,msg}=this.data;
+    let time=this.formatDate(yearList[selectYear],selectMonth+1,dayList[selectDay]);
+    this.setData({
+      billdata:{
+        money:inputMoney?inputMoney:0.00,
+        typeMsg:currentList[current],
+        time,
+        msg
+      }
+    })
+  },
+  save(){
+   this.savedata();
+    wx.reLaunch({
+      url:'/pages/index/index'
+    })
+  },
+  createAnother(){
+    this.savedata(),
+    this.init();
+  },
+  init(){
     let time=new Date();
     let {year,month,date}=util.getDateObj(time);
     let dlist=util.getCurMonthDayList(time);
@@ -358,8 +398,26 @@ Page({
       currentC:m,
       selectMonth:m+3>11 ? m+3-12 : m+3,
       dayList:dlist,
-      yearList:ylist
+      yearList:ylist,
+      current:0,
+      currentL:7,
+      selectYear:10,
+      msg:'',
+      inputMoney:''
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    this.init()
   },
 
   /**

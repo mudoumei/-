@@ -12,8 +12,10 @@
     "pages/calendar/calendar",
     "pages/weekPlan/weekPlan",
     "pages/monthPath/monthPath",
-    "pages/wishList/wishList"
-
+    "pages/wishList/wishList",
+    "pages/addWishList/addWishList",
+    "pages/wishListDetail/wishListDetail",
+    "pages/addWeekPlan/addWeekPlan"
   ],
   "permission": {
     "scope.userLocation": {
@@ -52,5 +54,7 @@
   "style": "v2",
   "cloud": true,
   "sitemapLocation": "sitemap.json",
-  "usingComponents": {"headerNav": "/components/header-nav/index"}
+  "usingComponents": {
+    "headerNav": "/components/header-nav/index"
+  }
 }

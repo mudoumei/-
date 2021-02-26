@@ -147,5 +147,7 @@ module.exports = {  //把方法共享，让引用的地方可以调用
   getWeekDayList: getWeekDayList,
   getMonthDayList:getMonthDayList,
   getDateObj:getDateObj,
-  getCurMonthDayList:getCurMonthDayList
+  getCurMonthDayList:getCurMonthDayList,
+  getCurrenrWeek:getCurrenrWeek,
+  getDateStr:getDateStr
 }

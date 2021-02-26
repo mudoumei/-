@@ -93,6 +93,23 @@
           "pathName": "pages/billAdd/billAdd",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/wishList/wishList",
+          "pathName": "pages/wishList/wishList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/weekPlan/weekPlan",
+          "pathName": "pages/weekPlan/weekPlan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addWeekPlan/addWeekPlan",
+          "pathName": "pages/addWeekPlan/addWeekPlan",
+          "scene": null
         }
       ]
     }

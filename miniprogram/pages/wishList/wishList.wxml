@@ -1,2 +1,29 @@
 <!--pages/wishList/wishList.wxml-->
-<text>pages/wishList/wishList.wxml</text>
+<headerNav title="心愿清单" isBack="{{true}}"></headerNav>
+<scroll-view class="container" scroll-y style="height:{{height}}rpx"> 
+  <view class="top">
+     <view class="h-title">我的清单</view>
+     <image class="wishImg" src="{{imgUrl}}" mode="widthFix"></image>
+  </view>
+  <view wx:for="{{wishList}}" wx:key="index" class="card" bindtap="goDetail"
+  wx:for-item="cardItem" style="{{style.getStyle(cardItem.themeColor)}}"> 
+    <view class="content">
+        <view wx:for="{{cardItem.list.length<4 ? cardItem.list.length:4}}" wx:key="index" 
+        class="{{style.getClass(cardItem.list[index].comeTrue)}}"> 
+          {{cardItem.list[index].name}}
+        </view>
+     </view> 
+      <view class="theme" style="color:{{cardItem.themeColor}}">{{cardItem.theme}}</view>
+  </view>
+  <image class="add" src="{{addImgUrl}}" bindtap="addWish"></image>
+</scroll-view>
+<wxs module="style">
+var getStyle=function(color){
+  return 'background-color:'+color+';box-shadow: 0rpx 3rpx 15rpx '+color
+}
+var getClass=function(val){
+  return val?'iconfont icon-xinxing-tianchong':'iconfont icon-xinxing' 
+}
+module.exports.getStyle = getStyle;
+module.exports.getClass = getClass;
+</wxs>

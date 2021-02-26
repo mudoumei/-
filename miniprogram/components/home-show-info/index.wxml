@@ -49,16 +49,15 @@
               </view>
               <view class='row' wx:for="{{weekPlan.wholeWeekPlan}}" wx:key="index">
                 <view class='td haveIcon'>
-                  <image src="{{item.finished ? checkIconUrl : uncheckIconUrl}}" class="icon"></image>
-                  <text>{{item.detail}}</text></view>
+                  <text class="{{item.finished?'iconfont icon-checkbox-checked':'iconfont icon-checkbox1'}}">{{item.detail}}</text></view>
               </view>
               <view class='row'>
                 <view class='th'><text>{{weekPlan.day}}</text></view>
               </view>
               <view class='row' wx:for="{{weekPlan.TodayPlan}}" wx:key="index">
                 <view class='td haveIcon'>
-                  <image src="{{item.finished ? checkIconUrl : uncheckIconUrl}}" class="icon"></image>
-                  <text>{{item.detail}}</text></view>
+                  <text class="{{item.finished?'iconfont icon-checkbox-checked':'iconfont icon-checkbox1'}}">{{item.detail}}</text>
+                </view>
               </view>
           </view>
         </view>
@@ -74,8 +73,7 @@
               <view class='row' wx:for="{{monthPlan.TodayPlan}}" wx:key="index">
                 <view class="{{item.finished ?'plan-icon-check' : 'plan-icon-uncheck'}}"></view>
                 <view class='td haveIcon'>
-                  <image src="{{item.finished ? checkIconUrl : uncheckIconUrl}}" class="icon"></image>
-                  <text>{{item.detail}}</text></view>
+                  <text class="{{item.finished?'iconfont icon-checkbox-checked':'iconfont icon-checkbox1'}}">{{item.detail}}</text></view>
               </view>
           </view>
         </view>

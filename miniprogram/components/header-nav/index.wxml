@@ -2,8 +2,7 @@
 <view style="height:{{height}}rpx;padding-top:{{statuHeight}}rpx;"></view>
 <view style="height:{{height}}rpx;padding-top:{{statuHeight}}rpx;" class="nav-container">
 <view style="height:{{titleHeight}}rpx;line-height:{{titleHeight}}rpx;text-align:center">
-  <view class="back" style="top:{{statuHeight}}rpx；height:{{titleHeight}}rpx;" wx:if="{{isBack}}">
-    <text style="line-height:{{titleHeight}}rpx;font-size:{{fontSize-8}}rpx;" bindtap="goback">返回</text></view>
+  <view class="back" style="top:{{statuHeight}}rpx；height:{{titleHeight}}rpx;" wx:if="{{isBack}}" bindtap="goback"></view>
   <text style="color:#fff; font-size={{fontSize}}rpx">{{title}}</text>
   <slot></slot>
 </view>

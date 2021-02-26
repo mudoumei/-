@@ -1,0 +1,55 @@
+<!--pages/addWeekPlan/addWeekPlan.wxml-->
+<headerNav title="周计划" isBack="{{true}}"></headerNav>
+<scroll-view scroll-y style="height:{{height}}rpx">
+  <view class="date">
+    <text class="iconfont icon-bar_icon_shijian th">日期</text>
+    <text>1月25日 - 1月31日</text>
+  </view>
+  <view class="box">
+    <view class="planList">
+      <text class="th">整周计划</text>
+      <view class="addCount" bindtap="addCount" data-list="wholeWeekPlan">+</view>
+      <view wx:for="{{wholeWeekPlan}}" wx:key="index" class="row">
+        <view class="num">{{index+1}}</view>
+        <input class="input" data-index="{{index}}" data-list="wholeWeekPlan" bindblur="inputBlur"
+          value="{{item.value}}" />
+        <view class="iconfont icon-chushaixuanxiang del" data-delIndex="{{index}}" data-list="wholeWeekPlan"
+          bindtap="delete"></view>
+      </view>
+    </view>
+    <view class="planList">
+      <text class="th">每日坚持计划</text>
+      <view class="addCount" bindtap="addCount" data-list="insistOnPlan">+</view>
+      <view wx:for="{{insistOnPlan}}" wx:key="index" class="row">
+        <view class="num">{{index+1}}</view>
+        <input class="input" data-index="{{index}}" data-list="insistOnPlan" bindblur="inputBlur"
+          value="{{item.value}}" />
+        <view class="iconfont icon-chushaixuanxiang del" data-delIndex="{{index}}" data-list="insistOnPlan"
+          bindtap="delete"></view>
+      </view>
+    </view>
+    <text class="th">每日专属计划</text>
+    <view class="planList" wx:for="{{weekdays}}" wx:for-item="day">
+      <view class="day" style="background-color:{{colors[index]}}">{{day}}.</view>
+      <view class="addCount" bindtap="addCount" data-list="{{day + 'Plan'}}">+</view>
+      <!-- <view wx:for="{{dayPlan[day+'Plan']}}" wx:key="index" class="row">
+        <view class="num">{{index+1}}</view>
+        <input class="input" data-index="{{index}}" data-list="{{'dayPlan.'+day+'Plan'}}" bindblur="inputBlur"
+          value="{{item.value}}" />
+        <view class="iconfont icon-chushaixuanxiang del" data-delIndex="{{index}}" data-list="{{'dayPlan.'+day+'Plan'}}"
+          bindtap="delete"></view>
+      </view> -->
+
+        <view wx:for="{{[day+'Plan']}}" wx:key="index" class="row">
+        <view class="num">{{index+1}}</view>
+        <input class="input" data-index="{{index}}" data-list="{{'dayPlan.'+day+'Plan'}}" bindblur="inputBlur"
+          value="{{item.value}}" />
+        <view class="iconfont icon-chushaixuanxiang del" data-delIndex="{{index}}" data-list="{{'dayPlan.'+day+'Plan'}}"
+          bindtap="delete"></view>
+      </view>
+    </view>
+  </view>
+
+
+
+</scroll-view>

@@ -1,0 +1,35 @@
+<!--pages/addWishList/addWishList.wxml-->
+<headerNav title="{{title}}" isBack="{{true}}"></headerNav>
+<scroll-view scroll-y style="height:{{height}}rpx">
+  <view class="content">
+    <text class="th">清单主题</text>
+    <input class="inputTheme" placeholder="给清单起个名称吧" placeholder-style="color:#ccc" value="{{theme}}"/>
+    <view class="wishList">
+      <text class="th">心愿清单</text>
+      <view class="addCount" bindtap="addCount">+</view>
+      <view wx:for="{{wishList}}" wx:key="index" class="row">
+        <view class="num">{{index+1}}</view>
+        <input class="inputwish" data-index="{{index}}" bindblur="inputBlur" value="{{item.value}}"/>
+        <view class="iconfont icon-chushaixuanxiang del" data-delIndex="{{index}}" data-list="wishList" bindtap="delete"></view>
+      </view>
+    </view>
+    <view class="wishList" wx:if="{{wishListTrue.length>0}}">
+      <text class="th">已获得</text>
+      <view wx:for="{{wishListTrue}}" wx:key="index" class="row" >
+        <view class="num">{{index+1}}</view>
+        <input class="inputwish" data-index="{{index}}" bindblur="inputBlur" value="{{item.value}}"/>
+        <view class="iconfont icon-chushaixuanxiang del" data-delIndex="{{index}}" data-list="wishListTrue" bindtap="delete"></view>
+      </view>
+    </view>
+    <text class="th">主题颜色</text>
+    <view class="selectColor">
+      <view class="mainColor" style="background-color:{{themeColor}}"></view>
+      <view class="colors">
+        <view wx:for="{{colors}}" wx:key="index" class="{{item==themeColor?'colorItem select':'colorItem'}}"
+         style="background-color:{{item}}" bindtap="selectColor" data-color="{{item}}"></view>
+      </view>
+    </view>
+    <view class="save iconfont icon-checkbox" bindtap="save"></view>
+  </view>
+</scroll-view>
+  

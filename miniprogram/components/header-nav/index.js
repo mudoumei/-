@@ -1,5 +1,5 @@
 // components/headerNav/headerNav.js
-const app=getApp()
+const globalDate=getApp().globalData
 Component({
   /**
    * 组件的属性列表
@@ -37,11 +37,7 @@ Component({
     }
   },
   ready: function (options) {
-    let systemInfo = wx.getSystemInfoSync();
-    let pxToRpxScale = 750 / systemInfo.windowWidth; //px转换到rpx的比例
-    let fontSize = systemInfo.fontSizeSetting * pxToRpxScale;// 用户设置的字体大小
-    let statuHeight = systemInfo.statusBarHeight * pxToRpxScale; //状态栏的高度
-    let titleHeight = 44 * pxToRpxScale;
+    let {fontSize,statuHeight,pxToRpxScale,titleHeight}=globalDate
     this.setData({
       fontSize: fontSize,
       statuHeight: statuHeight, 

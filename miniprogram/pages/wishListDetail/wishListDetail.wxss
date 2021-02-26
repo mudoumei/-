@@ -1,0 +1,46 @@
+/* pages/wishListDetail/wishListDetail.wxss */
+.scroll{
+  background: linear-gradient(#B9D8FF, #fff);
+}
+.container{
+  width: 100%;
+  padding: 50rpx 40rpx 0rpx 40rpx;
+}
+.th{
+  color:#fff;
+  font-size: 36rpx;
+  line-height: 100rpx;
+  text-shadow: 5rpx 5rpx 10rpx #87BAFB;
+}
+.card{
+  width: 100%;
+  padding:40rpx 40rpx;
+  color:#fff;
+  border-radius: 20rpx;
+}
+.card:last-child{
+  margin-bottom: 100rpx;
+}
+.card view{
+  font-size:32rpx;
+  line-height: 60rpx;
+}
+.iconfont:before{
+  padding: 0;
+}
+.edit{
+  position: fixed;
+  bottom:50rpx;
+  right: 40rpx;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  box-shadow: 0rpx 0rpx 12rpx #B9D8FF;
+  text-align: center;
+  line-height: 88rpx;
+  background-color: #fff;
+}
+.icon-bianji{
+  color:#B9D8FF;
+  font-size: 55rpx;
+}

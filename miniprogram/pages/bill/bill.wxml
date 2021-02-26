@@ -1,5 +1,5 @@
 <!--pages/bill/bill.wxml-->
-<view>
+<view bindtap="closeCalender">
   <headerNav title="账本" addHeight="{{addHeight}}" isBack="{{true}}">
     <view>
       <view class="th">
@@ -10,9 +10,10 @@
       <view class="td">
         <view class="firstBox">
           <text style="font-size:60rpx;color:#EB8585;">{{selectMonth}}</text>
-          <text class="month" bindtap="showCalendarM">月</text>
+          <text class="month" bindtap="showCalendarM" data-target="calendar">月</text>
           <view hidden="{{!showCalendar}}">
-           <calendar id="calendar" class="calendar" bind:hideCalendar="hideCalendarM" bind:getYearMonth="getYearMonth"></calendar> 
+           <calendar id="calendar" class="{{'calendar '+state}}" style="{{top}}" data-target="calendar"
+           bind:hideCalendar="hideCalendarM" bind:getYearMonth="getYearMonth"></calendar> 
           </view>
          </view>
          <view>

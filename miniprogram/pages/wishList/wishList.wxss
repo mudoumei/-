@@ -1,1 +1,53 @@
 /* pages/wishList/wishList.wxss */
+.top{
+  display: flex;
+  padding: 40rpx 0;
+}
+.h-title{
+  flex:1;
+  color:#fff;
+  text-align: center;
+  line-height:327rpx;
+  font-size: 40rpx;
+  text-shadow: 5rpx 10rpx 10rpx #87BAFB;
+  
+}
+.wishImg{
+  flex: 0 0 488rpx;
+}
+.card{
+  width: 90%;
+  height:400rpx;
+  margin:0 auto;
+  margin-bottom:80rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.card:last-of-type{
+  margin-bottom:200rpx;
+}
+.content{
+  height:calc(100% - 88rpx);
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color:#fff;
+}
+.theme{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  background-color: #fff;
+  font-size: 36rpx;
+}
+.add{
+  position: fixed;
+  right: 20rpx;
+  bottom:30rpx;
+  width: 126rpx;
+  height: 126rpx;
+  z-index:1;
+}

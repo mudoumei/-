@@ -1,2 +1,38 @@
 <!--pages/weekPlan/weekPlan.wxml-->
-<text>pages/weekPlan/weekPlan.wxml</text>
+<headerNav title="周计划" isBack="{{true}}"></headerNav>
+<view style="height:{{height}}rpx" class="container">
+ <view class="header">
+   <view class="left">
+     <image src="{{imgUrl}}"></image>
+     <view class="time">
+        <view>{{weekPlan.startTime}}</view>
+        <view>-</view>
+        <view>{{weekPlan.endTime}}</view>
+     </view>
+     
+     <view class="title">Week Plan</view>
+   </view>
+   <view class="right">
+      <view wx:for="{{weekPlan.wholeWeekPlan}}" class="{{item.finished?'iconfont icon-checkbox-checked':'iconfont icon-checkbox1'}}">
+        <view class="text">{{item.value}}</view>
+      </view>
+   </view>
+ </view>
+ <swiper class=".swiper" previous-margin="100rpx" next-margin="100rpx" current="{{current}}" bindchange="currentChange" circular>
+   <swiper-item wx:for="{{weekPlan.PlanList}}" wx:key="index" class="{{current==index?'card current':'card'}}">
+     <view class="box">
+        <scroll-view scroll-y class="content" style="background-color:{{colors[index]}}" >
+          <view wx:for="{{item.list}}" wx:key="index" wx:for-item="dayPlanItem" 
+          class="{{dayPlanItem.finished? 'planItem iconfont icon-success-circle':'planItem iconfont icon-radio'}}">
+          <text class="info">{{dayPlanItem.value}}</text>
+        </view>
+        </scroll-view>
+     <view class="timeInfo"> 
+       <view style="color:#1a1a1a">{{item.day}}.</view>
+       <view style="color:#ccc">{{item.time}}</view>   
+      </view>
+     </view>
+   </swiper-item>
+  </swiper>
+  <view class="add" bindtap="createPlan">+</view>
+</view>
